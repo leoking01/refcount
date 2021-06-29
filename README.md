@@ -48,3 +48,11 @@ Access to the counter are protected by the mutex. The mutex can also be used
 to protect the data by use the `ref_pthread` functions.
 
 See `refcount.h` and `refcount.c` for details.
+
+<img src=2021-06-28 17-42-22-cap.png  />
+
+
+
+
+
+
