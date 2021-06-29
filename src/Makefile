@@ -6,11 +6,14 @@ CFLAGS = -std=c99 -pedantic -Wall -W -g -O2 -pthread -ansi \
 all: refcount
 
 refcount: $(OBJ)
-	$(CC) -o $(PRGNAME) $(CFLAGS) $(OBJ)
+	$(CC) -o $(PRGNAME) $(CFLAGS) $(OBJ)    -I/usr/include/tirpc 
 
 main.o: main.c refcount.h
+	gcc -c  main.c  refcount.h -I/usr/include/tirpc
 
 refcount.o: refcount.c refcount.h
+	gcc -c  refcount.c   -I/usr/include/tirpc
+
 
 .PHONY: all clean
 
@@ -19,3 +22,4 @@ clean:
 
 dep:
 	$(CC) -MM *.c
+
